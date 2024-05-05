@@ -96,20 +96,25 @@ def broadcast(message):
             sleep(0.2)
 
         except BrokenPipeError:
-            # Log the error, close the client's connection and
-            #   continue with next client.
+            # If a user has closed the app, close the client's connection.
             client.close()
 
+            # Store the disconnected user in the index variable.
             index = client_list.index(client)
+
+            # Create a message to let other users know that the user has
+            # left the chat.
             msg = "has left the chat..."
             alias = f"{alias_list[index].decode(FORMAT)}"
+            message = f"{alias} {msg}\n"
+          
             logger.info(" %s %s", alias, msg)
 
+            # Delete the disconnected user from both lists.
             del client_list[index]
             del alias_list[index]
 
-            message = f"{alias} {msg}\n"
-
+            # Send the message to the remaining users.
             for user in client_list:
                 user.send(message.encode(FORMAT))
                 sleep(0.2)

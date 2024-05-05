@@ -1,20 +1,18 @@
-# PrivateChatRoom-Server v1.0.0
-Chat Server
+PrivateChatRoom-Server v1.0.2
 
-GUI_Server.py--a GUI-based user interface (GUI) for the PrivateChatRoom-Server.
-   The program allows users to start and stop the server, view log files,
-    and monitor the number of connected clients in real time. It also displays
-    private/public IPv4 addresses and mac address of the device running
-    the program.
-   It is designed to be used with the 'PrivateChatRoom-App' but can be used
-    with ones's own client application by connecting to the server via the
-    private IP (if devices are on the same network) or public IP
-    (over the internet), and the choosen port number (default port is 5050).
+The program allows users to start and stop the server, view log files,
+ and monitor the number of connected clients in real time. It also displays
+ private/public IPv4 addresses and mac address of the device running
+ the program.
+It is designed to be used with the 'PrivateChatRoom-App' but can be used
+ with ones's own client application by connecting to the server via the
+ private IP (if devices are on the same network) or public IP
+ (over the internet), and the choosen port number (default port is 5050).
 
 Usage:
 1. Set your router to allow port forwarding to the private IPv4/mac address
     of your device.
-2. Set your device firewall to allow traffic on your chosen port over TCP.
+2. Set your device's firewall to allow traffic on your chosen port over TCP.
     (Linux 'sudo ufw allow 5050/tcp')
 3. The server can also be used to communicated between devices on the same
     network (i.e in your home, hotel, office, etc..) without following step 1.
@@ -25,8 +23,7 @@ Usage:
     for incoming connections from clients and displays the server log.
 6. Users can change the port number by clicking on the 'change port' button
     and stop the server by pressing the 'stop server' button.
-7. The log files are updated every 100 milliseconds and display information
-    in the GUI, including public/private IPv4 address, mac address and port.
+7. Click 'X' on top-right corner of the window to exit the program.
 
 Requirements:
 - python3 or higher version is required.
@@ -41,6 +38,7 @@ Note:
     or if you run the server.py as standalone server, in the '.pcr_port' file.
 3. The program reads/writes from/to a log file named ".privateChat_server.log"
     to store and display server messages, errors, and client connections.
+    Log files are rotated (max 3 files). 
 4. There are 2 different options to use the server:
     a) gui_server.py (on a desktop/laptop with a GUI)
     b) server.py (on a desktop/laptop if a GUI is not required)
@@ -61,5 +59,13 @@ Features:
    Caution: if the local ipv4 address is not matching your devices ip on your
    router, check your systems host addresses (Linux /etc/hosts).
 - Port: port number is displayed.
-- User Count: The number of connected clients is displayed in real time on
-   the GUI and updated every 100 milliseconds.
+- User Count: The number of connected clients are displayed.
+- All server logs are displayed in real time in the GUI and are updated
+   every 100 milliseconds.
+
+What's new in v1.0.2:
+Two bugs have been fixed.
+- When a user closed the client App, the message that the user has left the chat
+   was not send to the clients.
+- Also, when a user closed the client App, the user count was send recursively to 
+   the clients and displayed in the chat display.

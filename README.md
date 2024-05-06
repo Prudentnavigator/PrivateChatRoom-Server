@@ -23,7 +23,7 @@ Usage:
 7. Click 'X' on top-right corner of the window to exit the program.
 
 Requirements:
-- python3 or higher version is required.
+- python3.10.12
 - tkinter module should be installed on your system.
 - also see requirements.txt.
 

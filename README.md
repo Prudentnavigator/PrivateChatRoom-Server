@@ -47,8 +47,7 @@ Note:
 Features:
 - Public IPv4 Address: This program reads the public IPv4 address of the
    device using an API and displays it in the GUI.
-- Mac Address: It gets the mac address of the device running the program,
-   which helps to identify a unique client.
+- Mac Address: It gets the mac address of the device running the server.
 - Private IPv4 Address: The private IPv4 on the local network of the machine
    running the program is also displayed.
    Caution: if the local ipv4 address is not matching your devices ip on your

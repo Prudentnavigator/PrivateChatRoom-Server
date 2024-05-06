@@ -1,9 +1,6 @@
 PrivateChatRoom-Server v1.0.2
 
-The program allows users to start and stop the server, view log files,
- and monitor the number of connected clients in real time. It also displays
- private/public IPv4 addresses and mac address of the device running
- the program.
+This program facilitates communication of connected clients in real time.
 It is designed to be used with the 'PrivateChatRoom-App' but can be used
  with ones's own client application by connecting to the server via the
  private IP (if devices are on the same network) or public IP
@@ -18,7 +15,7 @@ Usage:
     network (i.e in your home, hotel, office, etc..) without following step 1.
     However step 2 is still necessary.
 4. Run gui_server.py from the terminal which creates a GUI interface for the
-    PrivateChatRoom-Server.
+    'PrivateChatRoom-Server.
 5. Click on 'start server' button to start the server, which starts listening
     for incoming connections from clients and displays the server log.
 6. Users can change the port number by clicking on the 'change port' button
@@ -38,15 +35,13 @@ Note:
     or if you run the server.py as standalone server, in the '.pcr_port' file.
 3. The program reads/writes from/to a log file named ".privateChat_server.log"
     to store and display server messages, errors, and client connections.
-    Log files are rotated (max 3 files). 
+    Log files are rotated (max 4 files). 
 4. There are 2 different options to use the server:
     a) gui_server.py (on a desktop/laptop with a GUI)
     b) server.py (on a desktop/laptop if a GUI is not required)
-5. The gui_server.py can also be packaged with pyinstaller
-    (included in the requirements.txt) to a standalone executable.
-6. The Server logs info for troubleshooting and monitoring purposes only and 
+5. The Server logs info for troubleshooting and monitoring purposes only and 
     does not log any messages between clients.
-7. Please note that this program does not encrypt the data being sent between
+6. Please note that this program does not encrypt the data being sent between
     clients!
 
 Features:

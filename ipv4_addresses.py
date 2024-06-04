@@ -1,7 +1,8 @@
 #!/bin/env python3
- 
+# -*- mode: python; coding: utf-8 -*-
+
 # Script by Thomas Pirchmoser (tommy_software@mailfence.com) 2024
-  
+
 # This script was created for personal/educational purposes only and is not to
 #   be used for commercial or profit purposes.
 
@@ -67,7 +68,7 @@ def get_public():
         # Log the received IP
         logger.info(" your public IPv4 address: %s", data['ip'])
 
-        with open(".pcr_addresses", 'w+', encoding="utf-8") as file:
+        with open(".pcr_addresses.txt", 'w+', encoding="utf-8") as file:
             file.write(f"public_ipv4: {data['ip']}\n")
 
         get_mac()
@@ -78,7 +79,7 @@ def get_public():
         # If any error occurs during the request,
         #   log a message and return None.
 
-        with open(".pcr_addresses", 'w+', encoding="utf-8") as file:
+        with open(".pcr_addresses.txt", 'w+', encoding="utf-8") as file:
             file.write("Public_ip4: check internet connection!\n")
 
         logger.warning("[PUBLIC-IP]: check internet connection!")
@@ -91,7 +92,7 @@ def get_private():
     ip_addr = socket.gethostbyname(hostname)
     logger.info(" your private IPv4 address: %s", ip_addr)
 
-    with open(".pcr_addresses", 'a+', encoding="utf-8") as file:
+    with open(".pcr_addresses.txt", 'a+', encoding="utf-8") as file:
         file.write(f"private_ipv4: {ip_addr}\n")
 
     return ip_addr   # Return private IPv4 address.
@@ -102,7 +103,7 @@ def get_mac():
     mac = getmac.get_mac_address()
     logger.info(" your mac address: %s", mac)
 
-    with open(".pcr_addresses", 'a+', encoding="utf-8") as file:
+    with open(".pcr_addresses.txt", 'a+', encoding="utf-8") as file:
         file.write(f"device_mac: {mac}\n")
 
     return mac

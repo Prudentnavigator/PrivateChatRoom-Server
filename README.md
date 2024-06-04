@@ -13,9 +13,12 @@ If python3 is installed on your device, this program can be used with any
 operating system, (Windows, Mac, Linux, etc.).
 
   Usage:
-1a. Set your router to allow port forwarding to the private IPv4/mac address
+1. Option a:
+   Set your router to allow port forwarding to the private IPv4/mac address
     of your device.
-1b. You can also use VPN port forwarding (there are a number of VPN services
+   
+   Option b:
+   You can also use VPN port forwarding (there are a number of VPN services
     that provide that feature), with the added benefit that you can use the
     server anywhere you can connect to the internet (public-wifi i.e. hotels,
     airport, trains, etc.) as you don't need access to the router of that
@@ -23,17 +26,17 @@ operating system, (Windows, Mac, Linux, etc.).
     Also, an extra layer of security is added by using port forwarding over a
     VPN.
     This option is highly recommended.
-2.  Set your device's firewall to allow traffic on your chosen port over TCP.
-3.  The server can also be used to communicated between devices on the same
+3.  Set your device's firewall to allow traffic on your chosen port over TCP.
+4.  The server can also be used to communicated between devices on the same
     network (i.e in your home, hotel, office, etc..) without following step 1.
     However step 2 is still necessary.
-4.  Run gui_server.py from the terminal which creates a GUI interface for the
+5.  Run gui_server.py from the terminal which creates a GUI interface for the
     PrivateChatRoom-Server.
-5.  Click on 'start server' button to start the server, which starts listening
+6.  Click on 'start server' button to start the server, which starts listening
     for incoming connections from clients and displays the server log.
-6.  Users can set the ip address and port number by clicking on the 'set ip:port'
+7.  Users can set the ip address and port number by clicking on the 'set ip:port'
     button and stop the server by pressing the 'stop server' button.
-7.  Click 'X' on top-right corner of the window to exit the program.
+8.  Click 'X' on top-right corner of the window to exit the program.
 
   Requirements:
 - python3 or higher version is required.

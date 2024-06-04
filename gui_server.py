@@ -139,7 +139,7 @@ class GUIServer():
 
         # Create a new Tkinter window.
         self.window = tk.Tk()
-        self.window.title("PrivatChatRoom-Server v1.0.2")
+        self.window.title("PrivatChatRoom-Server v1.1.4")
         self.window.config(bg="lightgreen")
         self.window.geometry('1050x775')
 
@@ -172,14 +172,14 @@ class GUIServer():
 
         # Create a button to change the port number.
         self.widget["port_button"] = Button(frame,
-                                            text="change port",
+                                            text="set ip:port",
                                             font=("Roman", 15),
                                             bd=8,
                                             highlightbackground="black",
                                             activeforeground="blue",
                                             activebackground="lightblue",
                                             relief="raised",
-                                            command=change_port)
+                                            command=set_ip_port)
 
         # Create a button for stopping the server.
         self.widget["stop_button"] = Button(frame,
@@ -215,8 +215,8 @@ class GUIServer():
         self.window.mainloop()
 
 
-def change_port():
-    ''' Function that lets the user change the port number that the server
+def set_ip_port():
+    ''' Function that lets the user set the ip/port number that the server
         is listening on. '''
 
     # Stop the server.
@@ -227,31 +227,40 @@ def change_port():
     msg.option_add('*font', 'Times')
     msg.withdraw()  # Hiding the window.
 
-    # If the user does not enter an integer for the port, keep asking for
-    #   input unless canceled.
     while True:
-        # Getting a new port number from user.
-        port = simpledialog.askstring("PrivateChatRoom-Server",
-                                      "Please enter a port number",
+        # Getting a new ip/port number from user.
+        listening_on = simpledialog.askstring(
+                                      "PrivateChatRoom-Server",
+                                      "Please enter listening ip:port  "
+                                      "i.e (192.168.0.10:5050)",
                                       parent=msg)
+
+        # If the user cancels changing the port, close the dialog window.
+        if listening_on is None:
+            msg.destroy()
+            break
+
         try:
+            ip_port = listening_on.split(":")
+            ip_add = ip_port[0]
+            port = ip_port[1]
+
+            # If the user does not enter an integer for the port, keep asking
+            #  for input.
             if not port.isdigit():
                 continue
-        except AttributeError:
-            break
-        else:
-            break
 
-    # If the user cancels changing the port, close the dialog window.
-    if port is None:
-        msg.destroy()
+            # Write the changed ip/port to the .prc_ip_port.txt file.
+            with open(".pcr_ip_port.txt", "w", encoding="utf-8") as file:
+                info_txt = f"{ip_add}:{port}"
+                file.write(info_txt)
+                # Close the dialog window.
+                msg.destroy()
 
-    else:
-        # Write the changed port number to the .prc_port file.
-        with open(".pcr_port", "w", encoding="utf-8") as file:
-            file.write(port)
-            # Close the dialog window.
-            msg.destroy()
+                break
+
+        except IndexError:
+            continue
 
     server.read_port()
 

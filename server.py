@@ -54,10 +54,10 @@ logger.debug("[START] program started by the user...")
 
 # Assigning Public and Private IP Addresses.
 # Get the public IPv4 address of the machine.
-PUPLIC_IP = ipv4_addresses.get_public()
+PUBLIC_IP = ipv4_addresses.get_public()
 
 # Get the private IPv4 address of the host machine.
-HOST = ipv4_addresses.get_private()
+PRIVATE_IP = ipv4_addresses.get_private()
 
 # Encoding format for data being sent/received over the socket.
 FORMAT = "utf-8"
@@ -67,21 +67,45 @@ alias_list = []  # Initialize an empty list to store aliases of clients.
 SERVER_SOCKET = ""
 
 
-def read_port():
-    ''' Get the port number from the .prc_port file. '''
+def read_ip():
+    ''' Get the ip that the server will listen on. '''
 
     try:
-        # Opening file to read its content (port number).
-        with open(".pcr_port", "r", encoding="utf-8") as file:
-            port = int(file.read())
-            return port
+        # Opening file to get the ip address.
+        with open(".pcr_ip_port.txt", "r", encoding="utf-8") as file:
+            info = file.read()
+            ip_port = info.split(":")
+            ip_add = ip_port[0]
+            return ip_add
 
     except (FileNotFoundError, ValueError):
         # If the file does not exist or an error during reading the file
         #   occurs, create a new file with the a default port number 5050.
-        with open(".pcr_port", "w+", encoding="utf-8") as file:
+        with open(".pcr_ip_port.txt", "w+", encoding="utf-8") as file:
+            info_txt = f"{PRIVATE_IP}:5050"
+            file.write(info_txt)
+            ip_add = PRIVATE_IP
+            return ip_add
+
+
+def read_port():
+    ''' Get the port number from the .prc_ip_port.txt file. '''
+
+    try:
+        # Opening file to get the port number.
+        with open(".pcr_ip_port.txt", "r", encoding="utf-8") as file:
+            info = file.read()
+            ip_port = info.split(":")
+            port = ip_port[1]
+            return int(port)
+
+    except (FileNotFoundError, ValueError):
+        # If the file does not exist or an error during reading the file
+        #   occurs, create a new file with the a default port number 5050.
+        with open(".pcr_ip_port.txt", "w+", encoding="utf-8") as file:
+            info_txt = f"{PRIVATE_IP}:5050"
+            file.write(info_txt)
             port = 5050
-            file.write(str(port))
             return port
 
 
@@ -102,23 +126,22 @@ def broadcast(message):
             # Store the disconnected user in the index variable.
             index = client_list.index(client)
 
-            # Create a message to let other users know that the user has
-            # left the chat.
+            # Log that the user has left the chat.
             msg = "has left the chat..."
             alias = f"{alias_list[index].decode(FORMAT)}"
-            message = f"{alias} {msg}\n"
-          
+#            message = f"{alias} {msg}\n"
+
             logger.info(" %s %s", alias, msg)
 
             # Delete the disconnected user from both lists.
             del client_list[index]
             del alias_list[index]
 
-            # Send the message to the remaining users.
-            for user in client_list:
-                user.send(message.encode(FORMAT))
-                sleep(0.2)
-
+#            # Send the message to the remaining users.
+#            for user in client_list:
+#                user.send(message.encode(FORMAT))
+#                sleep(0.2)
+#
             # Update the user count.
             user_count(len(client_list), new=True)
 
@@ -183,7 +206,7 @@ def receive():
         # Log a message indicating that a new connection was made,
         #   with the name and IP address of the user.
         logger.info("[NEW CONNECTION]: %s %s ip: %s", msg2, msg1, addr[0])
-        cast = f"{msg1} joined the chat...\n".encode(FORMAT)
+        cast = f"\t{msg1} joined the chat...\n".encode(FORMAT)
 
         # Send a message indicating that a new user has joined to
         #   all connected clients.
@@ -232,6 +255,8 @@ def start():
 
     global SERVER_SOCKET
 
+    host = read_ip()
+
     # Get port used for the connection.
     port = read_port()
 
@@ -244,15 +269,16 @@ def start():
 
     try:
         # Bind the socket to the host and port number.
-        SERVER_SOCKET.bind((HOST, port))
+        SERVER_SOCKET.bind((host, port))
         logger.info(" server is starting...")
     except OSError as error:
         logger.critical("[BIND]: binding has failed! %s", error)
 
         # Log a help message according to the error number.
         if error.errno == 98:
-            msg = "close client apps, and stop/start server!"
-            logger.info("[HELP]: %s", msg)
+            msg = "close client apps and server, relaunch the server"
+            msg1 = "after a minute!"
+            logger.info("[HELP]: %s %s", msg, msg1)
         elif error.errno == 99:
             msg = " please connect to the internet!"
             logger.info("[HELP]: %s", msg)
@@ -266,7 +292,7 @@ def start():
                             error)
             sys.exit()
 
-        msg = f" server is running and listening on ip:{HOST} port:{port}"
+        msg = f" server is running and listening on ip:{host} port:{port}"
         logger.info(msg)
 
         receive()
@@ -275,7 +301,12 @@ def start():
 def stop():
     ''' Function to stop the server.'''
 
-    logger.info(" server shutting down...")
+    logger.info(" server stopped by user...")
+
+    # Let the users know that the server stopped.
+    broadcast("\n\t\t\tthe server has been stopped...\n".encode(FORMAT))
+    msg = "\t\tplease close the app and relaunch once the server is online..\n"
+    broadcast(msg.encode(FORMAT))
 
     # Iterate through all clients and close their connections.
     for i, client in enumerate(client_list):
@@ -292,6 +323,8 @@ def stop():
     try:
         SERVER_SOCKET.shutdown(socket.SHUT_RDWR)  # Shut down the socket.
         SERVER_SOCKET.close()  # Close the socket object.
+        logger.info(" socket closed...")
+
     except (AttributeError, OSError):
         pass
 

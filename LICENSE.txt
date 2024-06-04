@@ -1,4 +1,4 @@
-I hereby agree to use the Software (PrivateChatRoom-Server v1.0.2) solely for my
+I hereby agree to use the Software (PrivateChatRoom-Server v1.1.4) solely for my
  personal use and not for any commercial purposes. I understand that the
  copyright to this software belongs to (Thomas Pirchmoser). By downloading,
  installing, or using this software, I accept the terms and conditions
@@ -13,7 +13,7 @@ I hereby agree to use the Software (PrivateChatRoom-Server v1.0.2) solely for my
 5.  This software and its documentation are provided "as is" without warranty
      of any kind, express or implied, including but not limited to the
      warranties of merchantability, fitness for a particular purpose and
-     non-infringement. In no event shall (Thomas Pirchmoser) be liable to
+     non-infringement. In no event shall (insert company name) be liable to
      me or anyone else for any consequential damages, including but not limited
      to lost profits or lost data.
 6.  I am solely responsible for all damage caused by the use of this
@@ -28,8 +28,8 @@ I hereby agree to use the Software (PrivateChatRoom-Server v1.0.2) solely for my
 9.  I agree not to redistribute, resell or transfer the Software to third
      parties without the express permission of (Thomas Pirchmoser).
 10. This license agreement is effective until terminated by either party. If
-     you wish to terminate this agreement, notify (Thomas Pirchmoser) in
-     writing within a reasonable time period.
+     you wish to terminate this agreement, notify
+     (Thomas Pirchmoser-tommy_software@mailfence.com) in writing within 30 days.
 
 By agreeing to these terms, I understand that I may be held liable for any
    damage caused by my use of the Software and agree to assume full

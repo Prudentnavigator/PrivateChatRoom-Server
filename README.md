@@ -4,7 +4,8 @@ PrivateChatRoom-Server v1.1.4
 users can potentially be stored and read (encrypted or not) by third parties.
 This poses a risk to privacy, as private communications should be private.
 PrivateChatRoom-Server allows you to be in control of your own server, so you
-can communicate with your family or friends over the internet freely. 
+can communicate with your family or friends over the internet freely.
+
 It is designed to be used with the "PrivateChatRoom-App" but can be used
 with ones own client application by connecting to the server via the
 private IP (if devices are on the same network) or public IP (over the internet),

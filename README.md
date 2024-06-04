@@ -56,15 +56,17 @@ operating system, (Windows, Mac, Linux, etc.).
     firewall). The listening ip should be 0.0.0.0.
 4. The program reads/writes from/to a log file named ".privateChat_server.log"
     to store and display server messages, errors, and client connections.
-    Log files are rotated (max 3 files). 
+    Log files are rotated (max 4 files). 
 5. There are 2 different options to use the server:
+   
     a) gui_server.py (on a desktop/laptop with a GUI)
+   
     b) server.py (on a desktop/laptop if a GUI is not required)
-6. The gui_server.py can also be packaged with pyinstaller or other packaging
+7. The gui_server.py can also be packaged with pyinstaller or other packaging
     software to a standalone executable.
-7. The Server logs info for troubleshooting and monitoring purposes only and 
+8. The Server logs info for troubleshooting and monitoring purposes only and 
     does not log any messages between clients.
-8. Please note that this program does not encrypt the data being sent between
+9. Please note that this program does not encrypt the data being sent between
     clients! However, if VPN's are used with the server and the apps, the
     messages are encrypted.
 

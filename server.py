@@ -129,7 +129,6 @@ def broadcast(message):
             # Log that the user has left the chat.
             msg = "has left the chat..."
             alias = f"{alias_list[index].decode(FORMAT)}"
-#            message = f"{alias} {msg}\n"
 
             logger.info(" %s %s", alias, msg)
 
@@ -137,11 +136,6 @@ def broadcast(message):
             del client_list[index]
             del alias_list[index]
 
-#            # Send the message to the remaining users.
-#            for user in client_list:
-#                user.send(message.encode(FORMAT))
-#                sleep(0.2)
-#
             # Update the user count.
             user_count(len(client_list), new=True)
 

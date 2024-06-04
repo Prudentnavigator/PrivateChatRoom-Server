@@ -1,6 +1,6 @@
 PrivateChatRoom-Server v1.1.4
 
-  Most chat applications connect to a server where all the messages between
+Most chat applications connect to a server where all the messages between
 users can potentially be stored and read (encrypted or not) by third parties.
 This poses a risk to privacy, as private communications should be private.
 PrivateChatRoom-Server allows you to be in control of your own server, so you

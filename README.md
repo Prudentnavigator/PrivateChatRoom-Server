@@ -69,8 +69,7 @@ Note:
 8. The Server logs info for troubleshooting and monitoring purposes only and 
     does not log any messages between clients.
 9. Please note that this program does not encrypt the data being sent between
-    clients! However, if VPN's are used with the server and the apps, the
-    messages are encrypted.
+    clients!
 
   Features:
 - Public IPv4 Address: This program reads the public IPv4 address of the

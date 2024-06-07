@@ -10,7 +10,8 @@ It is designed to be used with the "PrivateChatRoom-App" but can be used
 with ones own client application by connecting to the server via the
 private IP (if devices are on the same network) or public IP (over the internet),
 and the chosen port number (default port is 5050).
-If python3.10 is installed on your device, this program can be used with any 
+
+As long as python3.10 is installed on your device, this program can be used with any 
 operating system, (Windows, Mac, Linux, etc.).
 
   Usage:

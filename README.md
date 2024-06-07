@@ -40,12 +40,12 @@ operating system, (Windows, Mac, Linux, etc.).
     button and stop the server by pressing the 'stop server' button.
 8.  Click 'X' on top-right corner of the window to exit the program.
 
-  Requirements:
+ Requirements:
 - python3.10 or a higher version is required.
 - tkinter module should be installed on your system.
 - also see requirements.txt.
 
-  Note:
+Note:
 1. To get Public IPv4 and Mac Address, user needs to have an active internet
     connection.
 2. Make sure that the server port number is not being used by any other

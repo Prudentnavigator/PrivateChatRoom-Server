@@ -41,7 +41,7 @@ operating system, (Windows, Mac, Linux, etc.).
 8.  Click 'X' on top-right corner of the window to exit the program.
 
  Requirements:
-- python3.10 or a higher version is required.
+- python3.10 or a higher version (may also work with lower versions).
 - tkinter module should be installed on your system.
 - also see requirements.txt.
 

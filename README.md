@@ -87,5 +87,5 @@ Note:
 - All server logs are displayed in real time in the GUI and are updated
    every 100 milliseconds.
 
-If you have any questions/recommendations or want to report a bug you can reach
+If you have any questions/recommendations or want to report a bug, you can reach
  me by email (tommy_software@mailfence.com).

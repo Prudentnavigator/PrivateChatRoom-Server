@@ -4,7 +4,7 @@ Most chat applications connect to a server where all the messages between
 users can potentially be stored and read (encrypted or not) by third parties.
 This poses a risk to privacy, as private communications should be private.
 PrivateChatRoom-Server allows you to be in control of your own server, so you
-can communicate with your family or friends over the internet freely.
+can communicate with your family, friends or business partners over the internet freely.
 
 It is designed to be used with the "PrivateChatRoom-App" but can be used
 with ones own client application by connecting to the server via the
@@ -57,18 +57,19 @@ operating system, (Windows, Mac, Linux, etc.).
     for the 'PrivateChatRoom-Server' to listen on (also allow this port on your
     firewall). The listening ip should be 0.0.0.0.\
 >The program reads/writes from/to a log file named ".privateChat_server.log"
-    to store and display server messages, errors, and client connections.
+    to store and display server messages, errors, and client connections.\
     Log files are rotated (max 4 files).\
+>The Server logs info for troubleshooting and monitoring purposes only and 
+    does not log any messages between clients.\
 >There are 2 different options to use the server:
    
     gui_server.py
    
     server.py
-    
+
+>[!TIP]
 >The gui_server.py can also be packaged with pyinstaller or other packaging
-    software to a standalone executable.\
->The Server logs info for troubleshooting and monitoring purposes only and 
-    does not log any messages between clients.
+    software to a standalone executable.
 
 >[!CAUTION]
 >Beware this program does not encrypt the data being sent between

@@ -1,4 +1,4 @@
-PrivateChatRoom-Server v1.1.4
+## <ins>PrivateChatRoom-Server v1.1.4<\ins>
 
 Most chat applications connect to a server where all the messages between
 users can potentially be stored and read (encrypted or not) by third parties.
@@ -14,7 +14,7 @@ and the chosen port number (default port is 5050).
 As long as python3.10 is installed on your device, this program can be used with any 
 operating system, (Windows, Mac, Linux, etc.).
 
-  Usage:
+###  Usage:
 1. Option a:
    Set your router to allow port forwarding to the private IPv4/mac address
     of your device.
@@ -40,46 +40,47 @@ operating system, (Windows, Mac, Linux, etc.).
     button and stop the server by pressing the 'stop server' button.
 8.  Click 'X' on top-right corner of the window to exit the program.
 
- Requirements:
+### Requirements:
 - python3.10 or a higher version (may also work with lower versions).
 - tkinter module should be installed on your system.
 - also see requirements.txt.
 
-Note:
-1. To get Public IPv4 and Mac Address, user needs to have an active internet
-    connection.
-2. Make sure that the server port number is not being used by any other
+>[!NOTE]
+>To get Public IPv4 and Mac Address, user needs to have an active internet
+    connection.\
+>Make sure that the server port number is not being used by any other
     application on your machine, else change it with the 'set ip:port' button
     or if you run the server.py as standalone server, in the '.pcr_ip_port.txt'
-    file.
-3. If VPN port forwarding is used, the VPN server that you connect to will
+    file.\
+>If VPN port forwarding is used, the VPN server that you connect to will
     assign a port number. This port number should be set with the 'set ip:port'
     for the 'PrivateChatRoom-Server' to listen on (also allow this port on your
-    firewall). The listening ip should be 0.0.0.0.
-4. The program reads/writes from/to a log file named ".privateChat_server.log"
+    firewall). The listening ip should be 0.0.0.0.\
+>The program reads/writes from/to a log file named ".privateChat_server.log"
     to store and display server messages, errors, and client connections.
-    Log files are rotated (max 4 files). 
-5. There are 2 different options to use the server:
+    Log files are rotated (max 4 files).\
+>There are 2 different options to use the server:
    
-    a) gui_server.py (on a desktop/laptop with a GUI)
+    a) gui_server.py (on a desktop/laptop with a GUI)\
    
-    b) server.py (on a desktop/laptop if a GUI is not required)
-7. The gui_server.py can also be packaged with pyinstaller or other packaging
-    software to a standalone executable.
-8. The Server logs info for troubleshooting and monitoring purposes only and 
+    b) server.py (on a desktop/laptop if a GUI is not required)\
+>The gui_server.py can also be packaged with pyinstaller or other packaging
+    software to a standalone executable.\
+>The Server logs info for troubleshooting and monitoring purposes only and 
     does not log any messages between clients.
-9. Please note that this program does not encrypt the data being sent between
+>[!CAUTION]
+>This program does not encrypt the data being sent between
     clients!
 
-  Features:
+ ### Features:
 - Public IPv4 Address: This program reads the public IPv4 address of the
    device using an API and displays it in the GUI.
 - Mac Address: It gets the MAC address of the device running the program,
    which helps to identify a unique client.
 - Private IPv4 Address: The private IPv4 on the local network of the machine
    running the program is also displayed.
-
-   *Caution: if the local ipv4 address is not matching your devices IP on your
+>[!CAUTION]
+>If the local ipv4 address is not matching your devices IP on your
    router, check your systems host addresses (Linux /etc/hosts).
 - IPv4/Port: The IP address and the port number that the server is listening on
    are displayed.

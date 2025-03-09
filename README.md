@@ -71,10 +71,6 @@ operating system, (Windows, Mac, Linux, etc.).
 >The gui_server.py can also be packaged with pyinstaller or other packaging
     software to a standalone executable.
 
->[!CAUTION]
->Beware this program does not encrypt the data being sent between
-    clients!
-
  ### Features:
 - Public IPv4 Address: This program reads the public IPv4 address of the
    device using an API and displays it in the GUI.

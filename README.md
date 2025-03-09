@@ -15,11 +15,11 @@ As long as python3.10 is installed on your device, this program can be used with
 operating system, (Windows, Mac, Linux, etc.).
 
 ###  Usage:
-1. Option a:
+1. Option a:\
    Set your router to allow port forwarding to the private IPv4/mac address
     of your device.
    
-   Option b:
+   Option b:\
    You can also use VPN port forwarding (there are a number of VPN services
     that provide that feature), with the added benefit that you can use the
     server anywhere you can connect to the internet (public-wifi i.e. hotels,

@@ -61,16 +61,17 @@ operating system, (Windows, Mac, Linux, etc.).
     Log files are rotated (max 4 files).\
 >There are 2 different options to use the server:
    
-    a) gui_server.py
+    gui_server.py
    
-    b) server.py
+    server.py
+    
 >The gui_server.py can also be packaged with pyinstaller or other packaging
     software to a standalone executable.\
 >The Server logs info for troubleshooting and monitoring purposes only and 
     does not log any messages between clients.
 
 >[!CAUTION]
->This program does not encrypt the data being sent between
+>Beware this program does not encrypt the data being sent between
     clients!
 
  ### Features:

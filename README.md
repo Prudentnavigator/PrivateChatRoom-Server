@@ -17,10 +17,6 @@ operating system, (Windows, Mac, Linux, etc.).
 
 ![startup screen] (Screenshots/GUI_server_landing.png)
 
-
-![startup screen] (Screenshots/Gui_server_log.png)
-
-
 ###  Usage:
 1. Option a:\
    Set your router to allow port forwarding to the private IPv4/mac address

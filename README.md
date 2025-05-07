@@ -14,9 +14,9 @@ and the chosen port number (default port is 5050).
 As long as python3.10 is installed on your device, this program can be used with any 
 operating system, (Windows, Mac, Linux, etc.).
 
-![startup screen] (Screenshots/GUI_server_landing.png)
+![startup screen] (/Screenshots/GUI_server_landing.png)
 
-![startup screen] (Screenshots/Gui_server_log.png)
+![startup screen] (/Screenshots/Gui_server_log.png)
 
 ###  Usage:
 1. Option a:\

@@ -17,9 +17,6 @@ operating system, (Windows, Mac, Linux, etc.).
 
 ![startup screen] (Screenshots/GUI_server_landing.png)
 
-![startup screen] (Screenshots/Gui_server_log.png)
-
-
 ###  Usage:
 1. Option a:\
    Set your router to allow port forwarding to the private IPv4/mac address
@@ -45,6 +42,8 @@ operating system, (Windows, Mac, Linux, etc.).
 7.  Users can set the ip address and port number by clicking on the 'set ip:port'
     button and stop the server by pressing the 'stop server' button.
 8.  Click 'X' on top-right corner of the window to exit the program.
+
+![startup screen] (Screenshots/Gui_server_log.png)
 
 ### Requirements:
 - python3.10 or a higher version (may also work with lower versions).

@@ -6,7 +6,7 @@ This poses a risk to privacy, as private communications should be private.
 PrivateChatRoom-Server allows you to be in control of your own server, so you
 can communicate with your family, friends or business partners over the internet freely.
 
-It is designed to be used with the "PrivateChatRoom-App" but can be used
+It is designed to be used with the [PrivateChatRoom-App](https://github.com/Prudentnavigator/PrivateChatRoom-App) but can be used
 with ones own client application by connecting to the server via the
 private IP (if devices are on the same network) or public IP (over the internet),
 and the chosen port number (default port is 5050).

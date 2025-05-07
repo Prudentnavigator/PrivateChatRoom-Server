@@ -14,7 +14,7 @@ and the chosen port number (default port is 5050).
 As long as python3.10 is installed on your device, this program can be used with any 
 operating system, (Windows, Mac, Linux, etc.).
 
-![startup screen] (Screenshots/GUI_server_landing.png)
+![startup screen] (/Screenshots/GUI_server_landing.png)
 
 ###  Usage:
 1. Option a:\
@@ -42,7 +42,7 @@ operating system, (Windows, Mac, Linux, etc.).
     button and stop the server by pressing the 'stop server' button.
 8.  Click 'X' on top-right corner of the window to exit the program.
 
-![startup screen] (/Screenshots/Gui_server_log.png)
+![startup screen](/Screenshots/Gui_server_log.png)
 
 ### Requirements:
 - python3.10 or a higher version (may also work with lower versions).
